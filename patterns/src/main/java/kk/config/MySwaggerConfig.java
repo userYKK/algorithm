@@ -24,7 +24,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 public class MySwaggerConfig implements EnvironmentAware {
 
     private final Logger log = LoggerFactory.getLogger(MySwaggerConfig.class);
-    public static final String DEFAULT_INCLUDE_PATTERN = "/testEsTemp/.*";
+    public static final String DEFAULT_INCLUDE_PATTERN = "/api/.*";
     private RelaxedPropertyResolver propertyResolver;
 
     @Override
