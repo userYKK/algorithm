@@ -2,6 +2,8 @@ package kk.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import kk.create.abstractFactory.Factory;
+import kk.create.abstractFactory.SendSmsFactory;
 import kk.create.factory.SendFactory1;
 import kk.create.factory.SendFactory2;
 import kk.create.factory.SendFactory3;
@@ -45,5 +47,15 @@ public class CreateController {
     public void runFactory3(){
         Sender mailSender = SendFactory3.produceMail();
         mailSender.send();
+    }
+
+    @ApiOperation(value = "抽象工厂模式", response = String.class, nickname = "抽象工厂模式")
+    @RequestMapping(value = "/runAbstractFactory", method = RequestMethod.GET)
+    @ResponseBody
+    public void runAbstractFactory(){
+        // 创建一个  短信 工厂
+        Factory factory = new SendSmsFactory();
+        kk.create.abstractFactory.Sender produce = factory.produce();
+        produce.Send();
     }
 }
