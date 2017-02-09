@@ -10,6 +10,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -122,7 +123,11 @@ public class Part1 {
 
     @Test
     public void listTest5(){
-
         ArrayDemo.toArea4();
+    }
+
+    @Test
+    public void test(){
+        ArrayDemo.toArea5();
     }
 }
